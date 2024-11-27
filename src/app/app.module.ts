@@ -12,9 +12,9 @@ import { environment } from '../environments/environment';
     routes,
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFireAuthModule, // For authentication
-    AngularFireDatabaseModule // For Realtime Database
+    AngularFireDatabaseModule, // For Realtime Database
   ],
   providers: [],
-  bootstrap: []
+  bootstrap: [],
 })
-export class AppModule { }
+export class AppModule {}
