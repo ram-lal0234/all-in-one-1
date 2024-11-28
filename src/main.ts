@@ -1,7 +1,10 @@
 import { bootstrapApplication } from '@angular/platform-browser';
-import { appConfig } from './app/app.config';
+import { provideAnimations } from '@angular/platform-browser/animations'; // Required for animations
 import { AppComponent } from './app/app.component';
 
-bootstrapApplication(AppComponent, appConfig).catch((err) =>
-  console.error(err)
-);
+bootstrapApplication(AppComponent, {
+  providers: [
+    provideAnimations(), // Use this for animations
+    // If animations are not required, use provideNoopAnimations()
+  ],
+}).catch(err => console.error(err));
