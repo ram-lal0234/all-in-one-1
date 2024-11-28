@@ -1,0 +1,13 @@
+/* Footer Customizations */
+footer {
+    background-color: var(--surface-50);
+  }
+  
+  footer .hover\:text-primary:hover {
+    color: var(--primary-color);
+  }
+  
+  footer i {
+    cursor: pointer;
+  }
+  

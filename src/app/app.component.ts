@@ -4,11 +4,13 @@ import { CardModule } from 'primeng/card';
 import { ButtonModule } from 'primeng/button';
 import { AccordionModule } from 'primeng/accordion';
 import { TableModule } from 'primeng/table';
+import { NavbarComponent } from "./core/components/navbar/navbar.component";
+import { FooterComponent } from "./core/components/footer/footer.component";
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, CardModule, ButtonModule, AccordionModule, TableModule , AccordionModule],
+  imports: [RouterOutlet, CardModule, ButtonModule, AccordionModule, TableModule, AccordionModule, NavbarComponent, FooterComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
 })

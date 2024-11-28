@@ -1,0 +1,14 @@
+/* Navbar Customizations */
+nav {
+    background-color: var(--surface-0); /* PrimeNG Surface Color */
+  }
+  
+  nav a {
+    text-decoration: none;
+    font-size: 1rem;
+  }
+  
+  nav .hover\:text-primary:hover {
+    color: var(--primary-color);
+  }
+  
