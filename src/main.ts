@@ -4,7 +4,6 @@ import { AppComponent } from './app/app.component';
 
 bootstrapApplication(AppComponent, {
   providers: [
-    provideAnimations(), // Use this for animations
-    // If animations are not required, use provideNoopAnimations()
+    provideAnimations(), 
   ],
 }).catch(err => console.error(err));

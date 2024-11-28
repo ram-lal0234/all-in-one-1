@@ -9,7 +9,7 @@ import { AppRoutingModule } from './app-routing.module';
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
-    AppRoutingModule // Add it to the imports array
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: []
