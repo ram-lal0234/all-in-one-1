@@ -1,0 +1,13 @@
+<p-dialog [visible]="true" [modal]="true" [closable]="true" [header]="dialogData?.title" [style]="{ width: '50%' }">
+    <div class="dialog-content">
+      <h3>{{ dialogData?.title }}</h3>
+      <p>{{ dialogData?.description }}</p>
+      <ul>
+        <li *ngFor="let feature of dialogData?.features">{{ feature }}</li>
+      </ul>
+    </div>
+    <p-footer>
+      <button pButton label="Close" icon="pi pi-times" (click)="closeDialog()"></button>
+    </p-footer>
+  </p-dialog>
+  

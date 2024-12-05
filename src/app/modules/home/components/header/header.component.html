@@ -1,0 +1,27 @@
+
+<header class="header">
+    <!-- Logo Section -->
+    <div class="logo">
+      <i class="pi pi-rocket"></i>
+      <span class="brand">YourBrand</span>
+    </div>
+  
+    <!-- Navigation Section -->
+    <nav class="menu">
+      <ul>
+        <li *ngFor="let item of menuItems">
+          <a [routerLink]="item.link">
+            <i [class]="item.icon"></i>
+            <span>{{ item.label }}</span>
+          </a>
+        </li>
+      </ul>
+    </nav>
+  
+    <!-- Action Buttons -->
+    <div class="actions">
+      <button pButton type="button" label="Login" icon="pi pi-sign-in"></button>
+      <button pButton type="button" label="Sign Up" class="p-button-outlined"></button>
+    </div>
+  </header>
+  

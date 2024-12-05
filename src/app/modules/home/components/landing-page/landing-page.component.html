@@ -1,0 +1,27 @@
+<div class="landing-page">
+  <!-- Welcome Section -->
+  <section class="welcome-section">
+    <h1>Welcome to Our Platform!</h1>
+    <p>We offer easy solutions for managing and hosting your content.</p>
+  </section>
+
+  <!-- Features Section -->
+  <section class="features-section">
+    <div class="feature-card" (click)="openFeatureDialog('Catalog')">
+      <i class="pi pi-th-large" style="font-size: 2em;"></i>
+      <h3>Catalog</h3>
+      <p>Browse and manage your product catalog with ease.</p>
+    </div>
+
+    <div class="feature-card" (click)="openFeatureDialog('Blog')">
+      <i class="pi pi-pencil" style="font-size: 2em;"></i>
+      <h3>Blog</h3>
+      <p>Create and manage your blog posts effortlessly.</p>
+    </div>
+  </section>
+
+  <!-- Call to Action Section -->
+  <section class="cta-section">
+    <button pButton label="Get Started" icon="pi pi-arrow-right" (click)="navigateToAuth()"></button>
+  </section>
+</div>
