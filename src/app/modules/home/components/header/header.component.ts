@@ -6,7 +6,7 @@ import { Component } from '@angular/core';
   styleUrl: './header.component.scss'
 })
 export class HeaderComponent {
-  menuItems = [
+  items = [
     { label: 'Home', icon: 'pi pi-home', link: '/' },
     { label: 'Features', icon: 'pi pi-star', link: '/features' },
     { label: 'Pricing', icon: 'pi pi-dollar', link: '/pricing' },

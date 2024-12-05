@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 import { DynamicDialogService } from '../../../../services/dynamic-dialog.service';
 import { DynamicDialogConfig } from 'primeng/dynamicdialog';
-import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-landing-page',
@@ -17,6 +17,13 @@ export class LandingPageComponent {
       data: this.getFeatureDetails(featureType),
       header: `${featureType} Features`,
       width: '50%',
+      breakpoints: {
+        '960px': '75vw',
+        '640px': '90vw'
+    },
+      contentStyle: { overflow: 'auto' },
+            baseZIndex: 10000,
+            maximizable: true
     };
 
     this.dialogService.openDialog(dialogConfig);

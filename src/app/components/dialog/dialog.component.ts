@@ -2,11 +2,12 @@ import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { DialogService, DynamicDialogConfig, DynamicDialogRef } from 'primeng/dynamicdialog';
 import { DialogModule } from 'primeng/dialog';
+import { ButtonComponent } from "../button/button.component";
 
 @Component({
   selector: 'app-dialog',
   standalone: true,
-  imports: [CommonModule,DialogModule],
+  imports: [CommonModule, DialogModule, ButtonComponent],
   templateUrl: './dialog.component.html',
   styleUrl: './dialog.component.scss',
   providers: [DialogService]

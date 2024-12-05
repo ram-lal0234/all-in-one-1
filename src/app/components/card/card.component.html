@@ -1,0 +1,9 @@
+<p-card [header]="title" [subheader]="subtitle" >
+    <ng-template pTemplate="content">
+      <p>{{ content }}</p>
+      <a *ngIf="buttonLink" >
+        <app-button [label]="buttonLabel" class="p-button-text"></app-button>
+      </a>
+    </ng-template>
+  </p-card>
+  

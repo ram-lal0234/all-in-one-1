@@ -1,27 +1,44 @@
-<div class="landing-page">
-  <!-- Welcome Section -->
-  <section class="welcome-section">
-    <h1>Welcome to Our Platform!</h1>
-    <p>We offer easy solutions for managing and hosting your content.</p>
-  </section>
+<!-- Hero Section -->
+<div class="hero-section surface-0 text-center p-5 flex flex-column align-items-center">
+  <h1 class="text-4xl font-bold mb-3">Welcome to Your One-Stop Platform</h1>
+  <p class="text-lg mb-4">
+    Explore, manage, and share your content with ease through our powerful tools.
+  </p>
+  <app-button label="Get Started Now" type="button" link="/get-started"></app-button>
+</div>
 
-  <!-- Features Section -->
-  <section class="features-section">
-    <div class="feature-card" (click)="openFeatureDialog('Catalog')">
-      <i class="pi pi-th-large" style="font-size: 2em;"></i>
-      <h3>Catalog</h3>
-      <p>Browse and manage your product catalog with ease.</p>
-    </div>
+<!-- Features Section -->
+<div class="features-section grid p-5">
+  <!-- Catalog Feature -->
+  <div class="col-12 md:col-4">
+    <app-card
+      title="Catalog Management"
+      subtitle="Organize Your Content"
+      content="Easily create and manage catalogs to showcase your products and services."
+      buttonLabel="Learn More"
+      buttonLink="/catalog"
+    ></app-card>
+  </div>
 
-    <div class="feature-card" (click)="openFeatureDialog('Blog')">
-      <i class="pi pi-pencil" style="font-size: 2em;"></i>
-      <h3>Blog</h3>
-      <p>Create and manage your blog posts effortlessly.</p>
-    </div>
-  </section>
+  <!-- Blog Feature -->
+  <div class="col-12 md:col-4">
+    <app-card
+      title="Blog Platform"
+      subtitle="Share Your Insights"
+      content="Build a blog, share your thoughts, and engage with your audience effortlessly."
+      buttonLabel="Read Blogs"
+      buttonLink="/blog"
+    ></app-card>
+  </div>
 
-  <!-- Call to Action Section -->
-  <section class="cta-section">
-    <button pButton label="Get Started" icon="pi pi-arrow-right" (click)="navigateToAuth()"></button>
-  </section>
+  <!-- Hosting Feature -->
+  <div class="col-12 md:col-4">
+    <app-card
+      title="Hosting Services"
+      subtitle="Fast and Reliable"
+      content="Host your catalogs and blogs on our secure and high-performance servers."
+      buttonLabel="View Plans"
+      buttonLink="/hosting"
+    ></app-card>
+  </div>
 </div>
