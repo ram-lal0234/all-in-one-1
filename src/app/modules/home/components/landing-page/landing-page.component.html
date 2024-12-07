@@ -1,44 +1,24 @@
-<!-- Hero Section -->
-<div class="hero-section surface-0 text-center p-5 flex flex-column align-items-center">
-  <h1 class="text-4xl font-bold mb-3">Welcome to Your One-Stop Platform</h1>
-  <p class="text-lg mb-4">
-    Explore, manage, and share your content with ease through our powerful tools.
-  </p>
-  <app-button label="Get Started Now" type="button" link="/get-started"></app-button>
-</div>
-
-<!-- Features Section -->
-<div class="features-section grid p-5">
-  <!-- Catalog Feature -->
-  <div class="col-12 md:col-4">
-    <app-card
-      title="Catalog Management"
-      subtitle="Organize Your Content"
-      content="Easily create and manage catalogs to showcase your products and services."
-      buttonLabel="Learn More"
-      buttonLink="/catalog"
-    ></app-card>
+<div class="grid grid-nogutter surface-section text-800">
+  <!-- Left Section: Feature Description -->
+  <div class="col-12 md:col-6 p-6 text-center md:text-left flex align-items-center">
+      <section>
+          <!-- Title and Feature Headline -->
+          <span class="block text-6xl font-bold mb-1">Create Your Own</span>
+          <div class="text-6xl text-primary font-bold mb-3">Blog & Catalog with Hosting</div>
+          
+          <!-- Description Text -->
+          <p class="mt-0 mb-4 text-700 line-height-3">
+            Build and host your blog and catalog for free with our seamless platform. Showcase your products and share insightful content with ease, all in one place.
+          </p>
+          
+          <!-- Call to Action Buttons -->
+          <app-button label="Learn More" class="mr-3 p-button-raised"></app-button>
+          <app-button label="Get Started" class="p-button-outlined"></app-button>
+      </section>
   </div>
 
-  <!-- Blog Feature -->
-  <div class="col-12 md:col-4">
-    <app-card
-      title="Blog Platform"
-      subtitle="Share Your Insights"
-      content="Build a blog, share your thoughts, and engage with your audience effortlessly."
-      buttonLabel="Read Blogs"
-      buttonLink="/blog"
-    ></app-card>
-  </div>
-
-  <!-- Hosting Feature -->
-  <div class="col-12 md:col-4">
-    <app-card
-      title="Hosting Services"
-      subtitle="Fast and Reliable"
-      content="Host your catalogs and blogs on our secure and high-performance servers."
-      buttonLabel="View Plans"
-      buttonLink="/hosting"
-    ></app-card>
+  <!-- Right Section: Image Placeholder -->
+  <div class="col-12 md:col-6 overflow-hidden">
+      <img src="../../../../../assets/landing-page.png" alt="Product Image" class="md:ml-auto block md:h-full" style="clip-path: polygon(8% 0, 100% 0%, 100% 100%, 0 100%)">
   </div>
 </div>

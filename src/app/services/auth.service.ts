@@ -1,10 +1,7 @@
 import { Injectable } from '@angular/core';
-import { AngularFireAuth } from '@angular/fire/compat/auth'; // Keep using compat for AngularFire compatibility
-import { Router } from '@angular/router';
-import { User } from '@firebase/auth-types'; // Correct user import for Firebase v9+
-import { Observable } from 'rxjs';
-import { Auth } from 'firebase/auth'; // Import for Auth module in Firebase v9+
-import firebase from 'firebase/compat/app';
+import { distinctUntilChanged, from, map, Observable } from 'rxjs';
+import { Auth, signInWithPopup, GoogleAuthProvider, signOut, User, authState } from '@angular/fire/auth';
+import { onAuthStateChanged } from '@angular/fire/auth';
 
 // This version works for Firebase v9+ using AngularFire compatibility layer
 @Injectable({
@@ -12,34 +9,49 @@ import firebase from 'firebase/compat/app';
 })
 export class AuthService {
 
-  user$: Observable<User | null>; // Use User from @firebase/auth-types for proper typing
+  private user: Observable<User | null>;
 
-  constructor(private afAuth: AngularFireAuth, private router: Router) {
-    this.user$ = afAuth.authState; // Firebase auth state observable
-  }
-
-  // Check if the user is authenticated
-  isAuthenticated(): Observable<boolean> {
-    return new Observable((observer) => {
-      this.afAuth.authState.subscribe(user => {
-        if (user) {
-          observer.next(true);  // User is logged in
-        } else {
-          observer.next(false); // No user is logged in
-        }
-        observer.complete();
+  constructor(private auth: Auth) {
+    this.user = new Observable((observer) => {
+      onAuthStateChanged(this.auth, (user) => {
+        observer.next(user);
       });
     });
   }
 
-  // Log the user in using Google Auth provider (example)
-  loginWithGoogle(): Promise<any> {
-    const provider = new firebase.auth.GoogleAuthProvider();
-    return this.afAuth.signInWithPopup(provider);
+  // Check if the user is authenticated
+  isAuthenticated(): Observable<User | null> {
+    return authState(this.auth);
   }
 
-  // Log the user out
-  logout(): Promise<void> {
-    return this.afAuth.signOut();
+  signInWithGoogle(): Observable<void> {
+    const provider = new GoogleAuthProvider();
+    const result = signInWithPopup(this.auth, provider).then((result) => {
+      const credential = GoogleAuthProvider.credentialFromResult(result);
+      const token = credential?.accessToken;
+      const user = result.user;
+    }).catch((error) => {
+      // Handle Errors here.
+      const errorCode = error.code;
+      const errorMessage = error.message;
+      // The email of the user's account used.
+      const email = error.customData.email;
+      // The AuthCredential type that was used.
+      const credential = GoogleAuthProvider.credentialFromError(error);
+    });
+
+    return from(result);
+  }
+
+  signOut(): Observable<void> {
+    const result = signOut(this.auth).then(() => {
+      console.log('User signed out');
+    });
+
+    return from(result);
+  }
+
+  getUser(): Observable<User | null> {
+    return this.user;
   }
 }

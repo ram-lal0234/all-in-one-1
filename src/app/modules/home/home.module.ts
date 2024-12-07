@@ -17,8 +17,9 @@ import { AvatarModule } from 'primeng/avatar';
 import { InputTextModule } from 'primeng/inputtext';
 import { RippleModule } from 'primeng/ripple';
 import { CardComponent } from '../../components/card/card.component';
-
-
+import { AvatarComponent } from '../../components/avatar/avatar.component';
+import { MenuModule } from 'primeng/menu';
+import { ToastModule } from 'primeng/toast';
 @NgModule({
   declarations: [
     HeaderComponent,
@@ -38,7 +39,10 @@ import { CardComponent } from '../../components/card/card.component';
     AvatarModule, 
     InputTextModule, 
     RippleModule,
-    CardComponent
+    CardComponent,
+    AvatarComponent,
+    MenuModule,
+    ToastModule
   ],
   providers: [DialogService , DynamicDialogService],
 })

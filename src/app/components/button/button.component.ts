@@ -18,6 +18,7 @@ export class ButtonComponent {
 @Input() type: 'button' | 'submit' | 'reset' = 'button';
 @Input() disabled: boolean = false;
 @Input() loading: boolean = false;
+@Input() rounded : boolean = false;
 
 constructor() {}
 }

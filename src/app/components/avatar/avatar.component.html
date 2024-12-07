@@ -1,0 +1,16 @@
+<p-avatar
+  *ngIf="photoUrl; else noPhoto"
+  [image]="photoUrl"
+  size="large"
+  shape="circle"
+></p-avatar>
+<ng-template #noPhoto>
+  <p-avatar
+    [style]="{ backgroundColor: nameBasedColor }"
+    size="large"
+    shape="circle"
+    styleClass="text-white"
+  >
+    <span>{{ initials }}</span>
+  </p-avatar>
+</ng-template>

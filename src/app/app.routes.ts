@@ -8,7 +8,7 @@ export const routes: Routes = [
       loadChildren: () =>
         import('./modules/home/home.module').then((m) => m.HomeModule), // Lazy load HomeModule
     },
-    { path: '**', redirectTo: 'home' },
+    { path: '**', redirectTo: '' },
 ];
 
 @NgModule({
