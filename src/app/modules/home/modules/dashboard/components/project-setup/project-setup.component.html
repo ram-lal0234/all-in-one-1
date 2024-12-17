@@ -1,0 +1,13 @@
+<div class="setup-container">
+    <app-button
+      label="Create Firebase Project"
+      icon="pi pi-plus"
+      class="p-button-success"
+      [loading]="loading"
+      (click)="setupFirebaseProject()"
+    ></app-button>
+  
+    <p *ngIf="loading" class="loading-text">Creating project, please wait...</p>
+    <p *ngIf="successMessage" class="success-text">{{ successMessage }}</p>
+    <p *ngIf="errorMessage" class="error-text">{{ errorMessage }}</p>
+  </div>

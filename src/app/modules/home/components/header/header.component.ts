@@ -17,22 +17,21 @@ export class HeaderComponent {
     private router: Router,
     private toastService: ToastService
   ) {
-    this.user$ = authService.getUser();
-   (this.user$.subscribe((user) => console.log(user)));
+    this.user$ = authService.user$;
   }
 
   ngOnInit() {
-    // Get current user
-    this.authService.getUser().subscribe((currentUser) => {
-      if(currentUser){
+    // Subscribe to user$ observable to get the current user
+    this.authService.user$.subscribe((currentUser) => {
+      if (currentUser) {
         this.updateMenuItems();
-        this.router.navigate(['/dashboard']);
-      }else{
-        this.router.navigate(['/home']);
+        this.router.navigate(['/dashboard']); // Navigate to dashboard if user is logged in
+      } else {
+        this.router.navigate(['/home']); // Navigate to home if user is not logged in
       }
-
     });
   }
+
 
   updateMenuItems() {
     this.menuItems = [
