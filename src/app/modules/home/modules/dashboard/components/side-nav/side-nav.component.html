@@ -1,20 +1,12 @@
-<nav class="p-menu">
-    <ul class="list-none p-0 m-0">
-      <li>
-        <a routerLink="/project-set-up" class="p-menuitem-link">
-          <i class="pi pi-home"></i> Project
-        </a>
-      </li>
-      <li>
-        <a routerLink="/dashboard/reports" class="p-menuitem-link">
-          <i class="pi pi-chart-bar"></i> Reports
-        </a>
-      </li>
-      <li>
-        <a routerLink="/dashboard/settings" class="p-menuitem-link">
-          <i class="pi pi-cog"></i> Settings
-        </a>
-      </li>
-    </ul>
-  </nav>
-  
+<div class="side-nav surface-100 h-full w-16 md:w-64 shadow-2">
+  <!-- Same structure, but icons-only for smaller screens -->
+  <ul class="p-0 m-0 list-none">
+    <li
+      *ngFor="let item of navItems"
+      class="px-3 py-3 cursor-pointer hover:surface-200 transition-all text-gray-800 flex align-items-center justify-center md:justify-start"
+    >
+      <i [class]="item.icon" class="text-lg"></i>
+      <span class="hidden md:inline-block ml-2">{{ item.label }}</span>
+    </li>
+  </ul>
+</div>

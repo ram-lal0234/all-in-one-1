@@ -1,0 +1,12 @@
+<div class="flex flex-column gap-1" [formGroup]="formGroup">
+    <label [for]="id" class="p-text-bold">{{ label }}</label>
+    <input
+      type="number"
+      [id]="id"
+      [formControlName]="controlName"
+      class="p-inputtext p-component"
+    />
+    <small *ngIf="formGroup.get(controlName)?.invalid && formGroup.get(controlName)?.touched">
+      {{ errorMessage }}
+    </small>
+  </div>

@@ -1,0 +1,18 @@
+<div class="flex align-items-center justify-content-between px-2">
+  <div class="header-title">
+    <h2>{{ title }}</h2>
+  </div>
+
+  <!-- <div class="header-search p-ml-auto">
+    <p-inputText [(ngModel)]="searchQuery" placeholder="Search..." (input)="onSearch()"></p-inputText>
+  </div> -->
+
+  <div class="pr-2 flex align-items-center gap-2">
+    <app-button *ngFor="let action of actions"
+                [label]="action.label" 
+                [icon]="action.icon" 
+                [rounded]="true"
+                (click)="triggerAction(action.action)">
+    </app-button>
+  </div>
+</div>

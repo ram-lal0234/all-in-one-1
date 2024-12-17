@@ -1,13 +1,13 @@
-<div class="grid grid-nogutter">
+<div class="grid grid-nogutter h-screen">
   <!-- Sidebar -->
-  <div class="col-12 md:col-2">
-    <app-side-nav></app-side-nav>
+  <div class="col-12 md:col-2 surface-100 shadow-2">
+    <app-side-nav [navItems]="sideNavItems"></app-side-nav>
   </div>
-  
+
   <!-- Main Content -->
-  <div class="col-12 md:col-10">
-    <div class="p-3">
-      <router-outlet></router-outlet>
-    </div>
+  <div class="col-12 md:col-10 surface-0">
+      <div class="pl-2">
+        <router-outlet></router-outlet>
+      </div>
   </div>
 </div>

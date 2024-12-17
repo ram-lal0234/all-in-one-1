@@ -1,4 +1,4 @@
-<header class="flex justify-content-between flex-wrap px-4 py-3">
+<header class="flex justify-content-between flex-wrap px-4 pb-0">
     <!-- Logo -->
     <div class="flex">
       <!-- <img src="assets/logo.png" alt="Logo" class="header-logo" /> -->
@@ -10,9 +10,9 @@
       <!-- Avatar with Menu -->
       <p-menu #menu [popup]="true" [model]="menuItems"></p-menu>
       <app-avatar
-        [photoUrl]="user?.photoURL"
+        [photoUrl]="user?.photoURL || null"
         [fullName]="user?.displayName"
-        class="cursor-pointer"
+        class="cursor-pointer align-content-center"
         (click)="menu.toggle($event)"
       ></app-avatar>
     </div>

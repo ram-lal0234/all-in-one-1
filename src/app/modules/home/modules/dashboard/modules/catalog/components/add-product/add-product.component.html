@@ -1,0 +1,118 @@
+<form [formGroup]="addProductForm" *ngIf="addProductForm" (ngSubmit)="onSave()">
+  <div class="grid form-grid">
+    <!-- Product Name -->
+    <div class="col-12 md:col-6">
+      <app-input-text
+        label="Product Name"
+        id="productName"
+        [formGroup]="addProductForm"
+        formControlName="productName"
+        errorMessage="Product Name is required"
+      ></app-input-text>
+    </div>
+
+    <!-- Product Images -->
+    <div class="col-12">
+      <label for="productImages" class="p-text-bold">Product Images</label>
+      <input
+        type="file"
+        id="productImages"
+        multiple
+        formControlName="productImages"
+        class="p-inputtext p-component"
+      />
+    </div>
+
+    <!-- Description -->
+    <div class="col-12">
+      <app-input-textarea
+        label="Description"
+        id="description"
+        formControlName="description"
+        [formGroup]="addProductForm"
+      ></app-input-textarea>
+    </div>
+
+    <!-- Quantity -->
+    <div class="col-12 md:col-6">
+      <app-input-number
+        label="Quantity"
+        id="quantity"
+        [formGroup]="addProductForm"
+        formControlName="quantity"
+        errorMessage="Quantity is required and must be greater than 0"
+      ></app-input-number>
+    </div>
+
+    <!-- Stock Details -->
+    <div class="col-12 md:col-6">
+      <app-input-text
+        label="Stock Details"
+        id="stockDetails"
+        [formGroup]="addProductForm"
+        formControlName="stockDetails"
+      ></app-input-text>
+    </div>
+
+    <!-- Color -->
+    <div class="col-12 md:col-6">
+      <p-colorPicker
+        label="Color"
+        id="color"
+        formControlName="color"
+      ></p-colorPicker>
+    </div>
+
+    <!-- Size -->
+    <div class="col-12 md:col-6">
+      <app-input-text
+        label="Size"
+        id="size"
+        [formGroup]="addProductForm"
+        formControlName="size"
+      ></app-input-text>
+    </div>
+
+    <!-- Price -->
+    <div class="col-12 md:col-6">
+      <app-input-number
+        label="Price"
+        id="price"
+        [formGroup]="addProductForm"
+        formControlName="price"
+        errorMessage="Price is required and must be a positive number"
+      ></app-input-number>
+    </div>
+
+    <!-- Discount Price -->
+    <div class="col-12 md:col-6">
+      <app-input-number
+        label="Discount Price"
+        id="discountPrice"
+        [formGroup]="addProductForm"
+        formControlName="discountPrice"
+        errorMessage="Discount price must be a positive number"
+      ></app-input-number>
+    </div>
+
+    <!-- Thumbnail -->
+    <div class="col-12">
+      <label for="thumbnail" class="p-text-bold">Thumbnail</label>
+      <input
+        type="file"
+        id="thumbnail"
+        formControlName="thumbnail"
+        class="p-inputtext p-component"
+      />
+    </div>
+
+    <!-- Save Button -->
+    <div class="col-12">
+      <app-button
+        type="submit"
+        label="Save"
+        class="p-button-success"
+      ></app-button>
+    </div>
+  </div>
+</form>

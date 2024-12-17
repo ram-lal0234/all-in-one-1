@@ -1,0 +1,35 @@
+
+<app-dashboard-header
+  [title]="'Catalog Management'"
+  [actions]="headerActions"
+  (search)="handleSearch($event)"
+  (actionTriggered)="handleAction($event)"
+></app-dashboard-header>
+
+<div class="card">
+    <p-table [value]="products" responsiveLayout="scroll">
+      <ng-template pTemplate="header">
+        <tr>
+          <th>Image</th>
+          <th>Name</th>
+          <th>Category</th>
+          <th>Price</th>
+          <th>Rating</th>
+        </tr>
+      </ng-template>
+      <ng-template pTemplate="body" let-product>
+        <tr>
+          <td>
+            <img [src]="product.image" alt="Product Image" class="product-image" />
+          </td>
+          <td>{{ product.name }}</td>
+          <td>{{ product.category }}</td>
+          <td>${{ product.price }}</td>
+          <td>
+            <!-- <p-rating [value]="product.rating" [cancel]="false" [readonly]="true"></p-rating> -->
+          </td>
+        </tr>
+      </ng-template>
+    </p-table>
+  </div>
+  

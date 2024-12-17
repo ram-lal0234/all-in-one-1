@@ -5,10 +5,10 @@ import { SideNavComponent } from './components/side-nav/side-nav.component';
 import { DashboardLayoutComponent } from './components/dashboard-layout/dashboard-layout.component';
 import { CardComponent } from '../../../../components/card/card.component';
 import { SelectFeatureComponent } from './components/select-feature/select-feature.component';
-import { DialogModule } from 'primeng/dialog';
 import { ProjectSetupComponent } from './components/project-setup/project-setup.component';
 import { ButtonComponent } from '../../../../components/button/button.component';
-import { DynamicDialogModule } from 'primeng/dynamicdialog';
+import { DialogModule } from 'primeng/dialog';
+import { DynamicDialogModule , DynamicDialogRef, DynamicDialogConfig } from 'primeng/dynamicdialog';
 
 @NgModule({
   declarations: [
@@ -24,6 +24,10 @@ import { DynamicDialogModule } from 'primeng/dynamicdialog';
     ButtonComponent,
     DialogModule,
     DynamicDialogModule
+  ],
+  providers: [
+    DynamicDialogRef,
+    DynamicDialogConfig
   ]
 })
 export class DashboardModule { }
